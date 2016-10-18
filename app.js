@@ -58,7 +58,7 @@
 
 		pause:function(){
 
-			if(this.pause == true)
+			if(this.pause ==false)
 			{ 
 				clearInterval(this.intervalID);
 				this.pause = false;
@@ -79,7 +79,7 @@
 		},
 		reset:function(){
 
-			this.seconde = this.recupTemps();
+			 return this.recupTemps();
 			console.log(seconde);
 
 
