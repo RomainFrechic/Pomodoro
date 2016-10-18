@@ -41,8 +41,14 @@
 		barreDeProgression:function(){
 			var progress =(this.tempsTottal-this.seconde)*100/this.tempsTottal;
 			$('#progressbarblue').css('width', progress +'%');
-			$('#body').css('height', progress +'%');
+			$('#body').css('height', progress +'%');  
 			console.log(progress);
+		},
+
+
+		playvideo: function(){
+			var video=$('#iframe').append('<div id="iframe"><iframe width="422" height="240" src="https://www.youtube.com/embed/99AS1Rq5dIM?autoplay=1" frameborder="0" allowfullscreen></iframe></div>');
+			
 		},
 
 		pause:function(){
@@ -81,9 +87,11 @@
 			app.barreDeProgression();
 			if(this.seconde===0){
 				clearInterval(this.intervalID);
+				app.playvideo();
 			}
 
 		},
+		
 
 		updateView:function(){
 			var seconde = parseInt(this.seconde%60, 10);
