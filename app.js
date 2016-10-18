@@ -2,7 +2,7 @@
 (function (){ 
 	"use strict";
 	var app = {
-		
+
 		seconde: null,
 		pause: true,
 		intervalID:null,
@@ -13,12 +13,12 @@
 		},
 
 		listeners:function(){
-			
+
 			$('#start').on('click', this.start.bind(this));
 			$('#pause').on('click', this.pause.bind(this));
 			$('#reset').on('click', this.reset.bind(this));
 			
-			
+
 
 		},
 
@@ -41,11 +41,11 @@
 		barreDeProgression:function(){
 			var progress =(this.tempsTottal-this.seconde)*100/this.tempsTottal;
 			$('#progressbarblue').css('width', progress +'%');
-			
+
 			console.log(progress);
 		},
 
-		
+
 
 		pause:function(){
 
@@ -69,18 +69,21 @@
 
 		},
 		reset:function(){
-			
+
 			this.seconde = this.recupTemps();
 			console.log(seconde);
-			
+
 
 		},
 
 		decrement:function(){
-			
+
 			this.seconde--;
 			this.updateView();
 			app.barreDeProgression();
+			if(this.seconde===0){
+				clearInterval(this.intervalID);
+			}
 
 		},
 
