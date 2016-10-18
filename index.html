@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Countdown</title>
+</head>
+<body>
+	<div class="chrono">
+		<div class="counter"><span id="timer"></span><span id="seconde"></span></div>
+
+
+		<input type="text" id="countMin"/>
+		<input type="text" id="countSecond"/>
+		
+		<div>
+			<button id="start">Start</button>
+			<button id="pause">Pause</button>
+			<button id="reset">Reset</button>
+		</div>
+	</div>
+	<div id="progressbargrey"><div id="progressbarblue" value="5" min="0" max="100"></div></div>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="app.js"></script>
+
+</body>
+</html>

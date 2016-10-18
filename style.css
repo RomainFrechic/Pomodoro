@@ -1,0 +1,21 @@
+button {
+
+	background-color: blue;
+}
+
+input {
+	width: 75px;
+
+}
+
+#progressbargrey{
+	width: 500px;
+	height:50px;
+	border: solid 3px grey;
+}
+
+#progressbarblue{
+	width: 0%;
+	height: 50px;
+	background-color: blue;
+}
