@@ -35,6 +35,11 @@
 			clearInterval(this.intervalID);
 			this.recupTemps();
 			this.intervalID = setInterval(this.decrement.bind(this), 1000);
+			if(this.seconde!=0){
+				
+				$('#iframe').html('');
+			}
+
 			
 		},
 
