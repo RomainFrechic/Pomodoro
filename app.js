@@ -41,11 +41,9 @@
 		barreDeProgression:function(){
 			var progress =(this.tempsTottal-this.seconde)*100/this.tempsTottal;
 			$('#progressbarblue').css('width', progress +'%');
-
+			$('#body').css('height', progress +'%');
 			console.log(progress);
 		},
-
-
 
 		pause:function(){
 

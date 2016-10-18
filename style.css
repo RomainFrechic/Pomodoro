@@ -1,21 +1,57 @@
 button {
-
+	font-size: 30px;
 	background-color: blue;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 input {
-	width: 75px;
-
+	font-size: 25px;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #progressbargrey{
 	width: 500px;
-	height:50px;
-	border: solid 3px grey;
+	height:15px;
+	background-color: grey;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #progressbarblue{
 	width: 0%;
-	height: 50px;
-	background-color: blue;
+	height: 15px;
+	background-color: #00FFFF;
+	
+}
+
+#body{
+	height: 0%;
+	width: 100%;
+	position: absolute;
+	background-color: #DCDCDC;
+}
+
+.counter{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#time{
+	font-size: 250px;
+	border:3px solid grey;
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px;
+	height: 270px;
+}
+
+#centerButton{
+
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px;
 }
