@@ -40,7 +40,8 @@
 
 		start:function(){
 			clearInterval(this.intervalID);
-			this.recupTemps();	
+			this.recupTemps();
+			this.explosion();	
 			this.intervalID = setInterval(this.decrement.bind(this), 1000);
 			if(this.seconde!=0){
 				
@@ -106,10 +107,18 @@
 
 		},
 
-	};
-
-
-
+	
+        explosion:function(){
+        $(document).click(function(){
+            $('#progressbargrey').toggle("explode",{pieces: 18}, 800);
+            $('#start').toggle("explode",{pieces: 18}, 800);
+            $('#pause').toggle("explode",{pieces: 18}, 800);
+            $('#reset').toggle("explode",{pieces: 18}, 800);
+            $('#input').toggle("explode",{pieces: 18}, 800);
+           return
+        });
+        },
+};
 
 
 
