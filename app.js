@@ -3,6 +3,7 @@
 	"use strict";
 	var app = {
 
+		myDefaultTime: 300000,
 		seconde: null,
 		pause: true,
 		intervalID:null,
@@ -17,28 +18,36 @@
 			$('#start').on('click', this.start.bind(this));
 			$('#pause').on('click', this.pause.bind(this));
 			$('#reset').on('click', this.reset.bind(this));
-			
-
 
 		},
+
+
 
 		recupTemps: function(){
 			var min =$('#countMin').val();
 			var sec =$('#countSecond').val();
-			this.seconde = parseInt(min, 10)*60 + parseInt(sec, 10);
+			console.log(min ,sec , typeof(min));
+			if (min == "" && sec ==""){
+				this.seconde = this.myDefaultTime; 
+				this.updateView();
+			}
+			else{
+				this.seconde = parseInt(min*1000, 10)*60 + parseInt(sec*1000, 10);
+			}
 			this.tempsTottal = this.seconde;
-			console.log(this.tempsTottal);
-			console.log(this.seconde);
+		
 		},
 
 		start:function(){
 			clearInterval(this.intervalID);
-			this.recupTemps();
+			this.recupTemps();	
 			this.intervalID = setInterval(this.decrement.bind(this), 1000);
 			if(this.seconde!=0){
 				
 				$('#iframe').html('');
+
 			}
+			
 
 			
 		},
@@ -58,36 +67,27 @@
 
 		pause:function(){
 
-			if(this.pause ==false)
+			if(this.pause === false)
 			{ 
 				clearInterval(this.intervalID);
-				this.pause = false;
-				console.log(this.pause);
-				return this.pause;
-
-
-			}else{
 				this.pause = true;
+				console.log(this.pause);
+			}else{
+				this.pause = false;
 				this.start();
 				console.log(this.pause);
-				return this.pause;
-
-
 			}
 			console.log(clearInterval);
 
 		},
 		reset:function(){
-
-			 return this.recupTemps();
+			return this.recupTemps();
 			console.log(seconde);
-
-
 		},
 
 		decrement:function(){
-
-			this.seconde--;
+			console.log(app.seconde, typeof(app.seconde));
+			this.seconde= this.seconde-1000;
 			this.updateView();
 			app.barreDeProgression();
 			if(this.seconde===0){
@@ -99,9 +99,9 @@
 
 
 		updateView:function(){
-			var seconde = parseInt(this.seconde%60, 10);
-			var minutes = parseInt(this.seconde/60, 10);
-			$('#timer').html(minutes +":");
+			var seconde = parseInt(this.seconde/1000%60, 10);
+			var minutes = parseInt(this.seconde/1000/60, 10);
+			$('#timer').html(minutes);
 			$('#seconde').html(seconde);
 
 		},

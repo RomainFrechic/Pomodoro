@@ -1,4 +1,9 @@
+body{
+
+	background-color:#8EC0E4;
+}
 button {
+	box-shadow: 4px 4px 6px grey;
 	font-size: 30px;
 	background-color: blue;
 	margin-left: auto;
@@ -6,6 +11,7 @@ button {
 }
 
 input {
+	box-shadow: 4px 4px 6px grey;
 	font-size: 25px;
 	width: 150px;
 	margin-left: auto;
@@ -13,6 +19,7 @@ input {
 }
 
 #progressbargrey{
+	box-shadow: 2px 2px 4px grey;
 	width: 500px;
 	height:15px;
 	background-color: grey;
@@ -21,6 +28,7 @@ input {
 }
 
 #progressbarblue{
+	box-shadow: 6px 6px 8px #00FFFF;
 	width: 0%;
 	height: 15px;
 	background-color: #00FFFF;
@@ -31,7 +39,7 @@ input {
 	height: 0%;
 	width: 100%;
 	position: absolute;
-	background-color: #DCDCDC;
+	background-color: #f9320c;
 }
 
 .counter{
@@ -41,16 +49,17 @@ input {
 }
 
 #time{
+	box-shadow: 2px 2px 4px grey;
 	font-size: 250px;
 	border:3px solid grey;
+	background-color:#D4DFE6;
 	margin-left: auto;
 	margin-right: auto;
-	width: 350px;
+	width: 560px;
 	height: 270px;
 }
 
 #centerButton{
-
 	margin-left: auto;
 	margin-right: auto;
 	width: 350px;
@@ -61,4 +70,13 @@ input {
 	margin-right: auto;
 	width: 350px;
 
+}
+
+#countMin, #countSecond{
+     background-color: #DCDCDC;
+
+}
+
+#timer, #seconde{
+	text-shadow: 8px 8px 10px grey;
 }
